@@ -1,0 +1,112 @@
+body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvet,san-serif;
+}
+.header {
+	width: 100%;
+	padding: 5px 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: flex;
+	direction: row;
+	align-items: center;
+	justify-content: center;
+	border-bottom: 1px solid #DDD;
+}
+.header-logo {
+	flex-basis: 20%;
+	/*flex-grow: 1;*/
+}
+
+.header-logo-img {
+	height: 30px;
+}
+
+.header-search {
+	flex-basis: 15%;
+	height: 25px;
+	border: 1px solid #DDD;
+	border-radius: 2px;
+	cursor: text;
+	text-align: center;
+}
+
+.header-search-active {
+	display: flex;
+	direction: row;
+	align-items: center;
+	/*justify-content: center;*/
+	text-align: left;
+}
+
+.header-search-active .header-search-text {
+	display: none;
+}
+
+.header-search-active .header-search-input {
+	flex-basis: 80%;
+	flex-grow: 1;
+	display: inline;
+}
+
+.header-search-active .header-search-icon,
+.header-search-active .header-search-cancel {
+	flex-basis: 10%;
+	display: inline;
+	padding: 0 5px;
+	font-size: 12px;
+}
+
+.header-search-icon,
+.header-search-text,
+.header-search-cancel {
+	color: #DDD;
+}
+
+.header-search-input,
+.header-search-cancel {
+	display: none;
+}
+
+.header-search-input {
+	border: none;
+	outline: none;
+}
+
+.header-search-cancel {
+	cursor: pointer;
+}
+
+.header-nav {
+	flex-basis: 20%;
+}
+
+.header-nav ul {
+	list-style: none;
+	display: flex;
+	direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+.header-nav ul li {
+	padding: 0 10px;
+}
+
+.header-nav ul li a {
+	text-decoration: none;
+	color: #000;
+}
+
+.header-nav ul li a i {
+	font-size: 20px;
+}
+
+.header-nav-profile {
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+}
