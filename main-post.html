@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Main Post</title>
+	<link rel="stylesheet" type="text/css" href="./css/main-post.css">
+	<link rel="stylesheet" type="text/css" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+</head>
+<body>
+	<div id="post-1"class="main-post-item">
+		<div class="main-post-title">
+			<div class="post-profile">
+				<a href="#" class="profile-pic">
+					<!-- <img class="profile-pic" src="https://via.placeholder.com/128"> -->
+				</a>
+				<div class="profile-username">
+					<a href="#">instagram</a>
+				</div>
+			</div>
+			<div class="post-more">
+				<i class="fas fa-ellipsis-h"></i>
+			</div>
+		</div>
+		<div class="main-post-image">
+			<img class="post-img" src="https://via.placeholder.com/620">
+			<img class="post-img" src="https://via.placeholder.com/500x400">
+			<img class="post-img" src="https://via.placeholder.com/1000">
+			<img class="post-img" src="https://via.placeholder.com/300x200">
+			<i onclick="showImg('post-1', -1);" class="fas fa-chevron-circle-left btnPrev"></i>
+			<i onclick="showImg('post-1', 1);" class="fas fa-chevron-circle-right btnNext"></i>
+		</div>
+		<div class="main-post-toolbar">
+			<div class="toolbar-left">
+				<i class="far fa-heart tool-icon"></i>
+				<i class="far fa-comment tool-icon"></i>
+				<i class="far fa-paper-plane tool-icon"></i>
+			</div>
+			<div class="toolbar-right">
+				<i class="far fa-bookmark tool-icon"></i>
+			</div>
+			<div class="toolbar-center">
+			</div>
+		</div>
+		<div class="main-post-like-count">223 likes</div>
+		<div class="main-post-content">
+			<p class="post-user-content">
+				<span class="profile-username">
+					<a href="#">instagram</a>
+				</span>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</p>
+		</div>
+		<div class="main-post-comment">
+			<div class="post-comment-item">
+				<p class="post-user-comment">
+					<span class="profile-username">
+						<a href="#">user1</a>
+					</span>
+					<3
+				</p>
+				<i class="far fa-heart post-comment-like"></i>
+			</div>
+			<div class="post-comment-item">
+				<p class="post-user-comment">
+					<span class="profile-username">
+						<a href="#">user2</a>
+					</span>
+					Good
+				</p>
+				<i class="far fa-heart post-comment-like"></i>
+			</div>
+		</div>
+		<div class="main-post-timeline">
+			<a href="#">1 day ago</a>
+		</div>
+		<div class="main-post-add-comment">
+			<form class="commentForm" action="#">
+				<textarea autocomplete="off" autocorrect="off" class="commentText" placeholder="Add a comment..."></textarea>
+				<button type="submit" class="commentSubmit" disabled>Post</button>
+			</form>
+		</div>
+	</div>
+	<div id="post-3"class="main-post-item">
+		<div class="main-post-title">
+			<div class="post-profile">
+				<a href="#" class="profile-pic">
+				</a>
+				<div class="profile-username">
+					<a href="#">instagram</a>
+				</div>
+			</div>
+			<div class="post-more">
+				<i class="fas fa-ellipsis-h"></i>
+			</div>
+		</div>
+		<div class="main-post-image">
+			<img class="post-img" src="https://via.placeholder.com/620">
+			<img class="post-img" src="https://via.placeholder.com/500x400">
+			<img class="post-img" src="https://via.placeholder.com/1000">
+			<img class="post-img" src="https://via.placeholder.com/300x200">
+			<i onclick="showImg('post-3', -1);" class="fas fa-chevron-circle-left btnPrev"></i>
+			<i onclick="showImg('post-3', 1);" class="fas fa-chevron-circle-right btnNext"></i>
+		</div>
+		<div class="main-post-toolbar">
+			<div class="toolbar-left">
+				<i class="far fa-heart tool-icon"></i>
+				<i class="far fa-comment tool-icon"></i>
+				<i class="far fa-paper-plane tool-icon"></i>
+			</div>
+			<div class="toolbar-right">
+				<i class="far fa-bookmark tool-icon"></i>
+			</div>
+			<div class="toolbar-center">
+			</div>
+		</div>
+		<div class="main-post-like-count">223 likes</div>
+		<div class="main-post-content">
+			<p class="post-user-content">
+				<span class="profile-username">
+					<a href="#">instagram</a>
+				</span>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</p>
+		</div>
+		<div class="main-post-comment">
+			<div class="post-comment-item">
+				<p class="post-user-comment">
+					<span class="profile-username">
+						<a href="#">user1</a>
+					</span>
+					<3
+				</p>
+				<i class="far fa-heart post-comment-like"></i>
+			</div>
+			<div class="post-comment-item">
+				<p class="post-user-comment">
+					<span class="profile-username">
+						<a href="#">user2</a>
+					</span>
+					Good
+				</p>
+				<i class="far fa-heart post-comment-like"></i>
+			</div>
+		</div>
+		<div class="main-post-timeline">
+			<a href="#">1 day ago</a>
+		</div>
+		<div class="main-post-add-comment">
+			<form class="commentForm" action="#">
+				<textarea autocomplete="off" autocorrect="off" class="commentText" placeholder="Add a comment..."></textarea>
+				<button type="submit" class="commentSubmit" disabled>Post</button>
+			</form>
+		</div>
+	</div>
+	<div id="post-2"class="main-post-item">
+		<div class="main-post-title">
+			<div class="post-profile">
+				<a href="#" class="profile-pic">
+					<!-- <img class="profile-pic" src="https://via.placeholder.com/128"> -->
+				</a>
+				<div class="profile-username">
+					<a href="#">instagram</a>
+				</div>
+			</div>
+			<div class="post-more">
+				<i class="fas fa-ellipsis-h"></i>
+			</div>
+		</div>
+		<div class="main-post-image">
+			<img class="post-img" src="https://via.placeholder.com/620">
+			<img class="post-img" src="https://via.placeholder.com/500x400">
+			<img class="post-img" src="https://via.placeholder.com/1000">
+			<img class="post-img" src="https://via.placeholder.com/300x200">
+			<i onclick="showImg('post-2', -1);" class="fas fa-chevron-circle-left btnPrev"></i>
+			<i onclick="showImg('post-2', 1);" class="fas fa-chevron-circle-right btnNext"></i>
+		</div>
+		<div class="main-post-toolbar">
+			<div class="toolbar-left">
+				<i class="far fa-heart tool-icon"></i>
+				<i class="far fa-comment tool-icon"></i>
+				<i class="far fa-paper-plane tool-icon"></i>
+			</div>
+			<div class="toolbar-right">
+				<i class="far fa-bookmark tool-icon"></i>
+			</div>
+			<div class="toolbar-center">
+			</div>
+		</div>
+		<div class="main-post-like-count">223 likes</div>
+		<div class="main-post-content">
+			<p class="post-user-content">
+				<span class="profile-username">
+					<a href="#">instagram</a>
+				</span>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</p>
+		</div>
+		<div class="main-post-comment">
+			<div class="post-comment-item">
+				<p class="post-user-comment">
+					<span class="profile-username">
+						<a href="#">user1</a>
+					</span>
+					<3
+				</p>
+				<i class="far fa-heart post-comment-like"></i>
+			</div>
+			<div class="post-comment-item">
+				<p class="post-user-comment">
+					<span class="profile-username">
+						<a href="#">user2</a>
+					</span>
+					Good
+				</p>
+				<i class="far fa-heart post-comment-like"></i>
+			</div>
+		</div>
+		<div class="main-post-timeline">
+			<a href="#">1 day ago</a>
+		</div>
+		<div class="main-post-add-comment">
+			<form class="commentForm" action="#">
+				<textarea autocomplete="off" autocorrect="off" class="commentText" placeholder="Add a comment..."></textarea>
+				<button type="submit" class="commentSubmit" disabled>Post</button>
+			</form>
+		</div>
+	</div>
+	<script type="text/javascript" src="./js/main-post.js"></script>
+</body>
+</html>
