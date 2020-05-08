@@ -96,6 +96,25 @@ const animateOverlay = (element) => {
 	}, 1500);
 }
 
+const openModalMore = (event) => {
+	let modal = event.currentTarget.modal;
+	modal.style.visibility = 'visible';
+	modal.style.animation = 'fadeInModal .2s forwards';
+	let body = document.getElementsByTagName("body")[0];
+	body.style.overflow = 'hidden';
+}
+
+const closeModal = (event) => {
+	let target = event.target;
+	if (target.classList.contains('main-modal-more') || target.classList.contains('modal-close')) {
+		let modal = event.currentTarget.modal;
+		modal.style.visibility = 'hidden';
+		modal.style.animation = 'none';
+		let body = document.getElementsByTagName("body")[0];
+		body.setAttribute('style', '');
+	}
+}
+
 postList = document.getElementsByClassName('main-post-item');
 
 for (let post of postList) {
@@ -137,6 +156,14 @@ for (let post of postList) {
 	textArea.addEventListener('input', autoExpandTextArea);
 	textArea.post = post;
 	textArea.element = textArea;
+
+	// post more option
+	let modalMore = post.getElementsByClassName('main-modal-more')[0];
+	modalMore.addEventListener('click', closeModal);
+	modalMore.modal = modalMore;
+	let moreBtn = post.getElementsByClassName('post-more')[0];
+	moreBtn.addEventListener('click', openModalMore);
+	moreBtn.modal = modalMore;
 }
 
 
