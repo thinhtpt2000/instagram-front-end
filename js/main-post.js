@@ -29,9 +29,6 @@ const showImg = (postId, idx) => {
 		post.curImg = changeImg;
 		toolbarIconImg[post.curImg-1].style.color = '#0095F6';
 	}
-	else {
-		console.log('err');
-	}
 }
 
 const autoExpandTextArea = (event) => {
@@ -96,7 +93,7 @@ const animateOverlay = (element) => {
 	}, 1500);
 }
 
-const openModalMore = (event) => {
+const openModal = (event) => {
 	let modal = event.currentTarget.modal;
 	modal.style.visibility = 'visible';
 	modal.style.animation = 'fadeInModal .2s forwards';
@@ -106,7 +103,7 @@ const openModalMore = (event) => {
 
 const closeModal = (event) => {
 	let target = event.target;
-	if (target.classList.contains('main-modal-more') || target.classList.contains('modal-close')) {
+	if (target.classList.contains('main-modal') || target.classList.contains('modal-close')) {
 		let modal = event.currentTarget.modal;
 		modal.style.visibility = 'hidden';
 		modal.style.animation = 'none';
@@ -162,23 +159,36 @@ for (let post of postList) {
 		prev: btnPrev,
 		next: btnNext
 	});
+	
 	// process comment
 	let textArea = post.getElementsByClassName('commentText')[0];
 	textArea.addEventListener('input', autoExpandTextArea);
 	textArea.post = post;
 	textArea.element = textArea;
 
-	// post more option
+	// post more options
 	let modalMore = post.getElementsByClassName('main-modal-more')[0];
-	modalMore.addEventListener('click', closeModal);
-	modalMore.modal = modalMore;
-	let moreBtn = post.getElementsByClassName('post-more')[0];
-	moreBtn.addEventListener('click', openModalMore);
-	moreBtn.modal = modalMore;
+	if (modalMore !== undefined) {
+		modalMore.addEventListener('click', closeModal);
+		modalMore.modal = modalMore;
+		let moreBtn = post.getElementsByClassName('post-more')[0];
+		moreBtn.addEventListener('click', openModal);
+		moreBtn.modal = modalMore;
+	}
 
 	// change onclick save icon
 	let saveIcon = post.getElementsByClassName('fa-bookmark')[0];
 	saveIcon.addEventListener('click', changeSaveState);
+
+	// post share option
+	let modalShare = post.getElementsByClassName('main-modal-share')[0];
+	if (modalShare !== undefined) {
+		modalShare.addEventListener('click', closeModal);
+		modalShare.modal = modalShare;
+			let shareBtn = post.getElementsByClassName('post-share')[0];
+		shareBtn.addEventListener('click', openModal);
+		shareBtn.modal = modalShare;
+	}
 }
 
 

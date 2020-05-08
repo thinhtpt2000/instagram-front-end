@@ -14,7 +14,7 @@ body {
 	margin-bottom: 50px;
 }
 
-.main-modal-more {
+.main-modal {
 	width: 100%;
 	height: 100%;
 	top: 0;
@@ -40,7 +40,8 @@ body {
 	}
 }
 
-.main-modal-more .modal-more-content {
+.main-modal .modal-more-content,
+.main-modal .modal-share-content {
 	width: 25%;
 	background-color: #FFF;
 	border-radius: 10px;
@@ -241,6 +242,66 @@ body {
 .btnLike[action-label="unlike"] {
 	color: rgb(0, 0, 0);
 	animation: none;
+}
+
+.main-modal-share {
+	flex-direction: column;
+}
+
+.main-modal-share .modal-share-header {
+	width: 25%;
+	line-height: 50px;
+	text-align: center;
+	background-color: #FFF;
+	vertical-align: middle;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	border-bottom: 1px solid #DDD;
+	position: relative;
+}
+
+.modal-share-header .modal-share-title {
+	font-weight: 700;
+	font-size: 16px;
+}
+
+.modal-share-header .modal-close {
+	position: absolute;
+	right: 20px;
+	top: 50%;
+	transform: translate(0, -50%);
+	font-size: 1.5rem;
+	cursor: pointer;
+}
+.main-modal-share .modal-share-content {
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+
+.modal-share-content .modal-item {
+	width: 100%;
+	border: none;
+	outline: none;
+	background-color: transparent;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	height: 50px;
+	margin: 10px 0;
+}
+
+.modal-share-content .modal-item:hover,
+.modal-share-content .modal-item:active {
+	background-color: rgba(0, 0, 0, .1);
+}
+
+.modal-share-content .modal-close i {
+	opacity: 0;
+}
+
+.modal-share-content .modal-item i {
+	flex-basis: 20%;
+	font-size: 1.5rem;
 }
 
 @keyframes scalingLikeBtn {

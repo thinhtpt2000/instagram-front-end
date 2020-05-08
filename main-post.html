@@ -7,7 +7,7 @@
 </head>
 <body>
 	<div id="post-1"class="main-post-item">
-		<div class="main-modal-more" target-post="post-1">
+		<div class="main-modal main-modal-more" target-post="post-1">
 			<div class="modal-more-content">
 				<button class="modal-item modal-red">Report Inappropriate</button>
 				<button class="modal-item modal-red">Unfollow</button>
@@ -46,12 +46,48 @@
 			<div class="toolbar-left">
 				<i class="far fa-heart tool-icon btnLike"></i>
 				<i class="far fa-comment tool-icon"></i>
-				<i class="far fa-paper-plane tool-icon"></i>
+				<i class="far fa-paper-plane tool-icon post-share"></i>
 			</div>
 			<div class="toolbar-right">
 				<i class="far fa-bookmark tool-icon"></i>
 			</div>
 			<div class="toolbar-center">
+			</div>
+		</div>
+		<div class="main-modal main-modal-share" target-post="post-1">
+			<div class="modal-share-header">
+				<div class="modal-share-title">Share</div>
+				<i class="fas fa-times modal-close"></i>
+			</div>
+			<div class="modal-share-content">
+				<button class="modal-item">
+					<i class="far fa-paper-plane"></i>
+					<span class="modal-item-name">Share to Direct</span>
+				</button>
+				<button class="modal-item">
+					<i class="fab fa-facebook"></i>
+					<span class="modal-item-name">Share to Facebook</span>
+				</button>
+				<button class="modal-item">
+					<i class="fab fa-facebook-messenger"></i>
+					<span class="modal-item-name">Share to Messenger</span>
+				</button>
+				<button class="modal-item">
+					<i class="fab fa-twitter"></i>
+					<span class="modal-item-name">Share to Twitter</span>
+				</button>
+				<button class="modal-item">
+					<i class="far fa-envelope"></i>
+					<span class="modal-item-name">Share via Email</span>
+				</button>
+				<button class="modal-item">
+					<i class="fas fa-link"></i>
+					<span class="modal-item-name">Copy Link</span>
+				</button>
+				<button class="modal-item modal-close">
+					<i class="fas fa-times"></i>
+					<span class="modal-item-name">Cancel</span>
+				</button>
 			</div>
 		</div>
 		<div class="main-post-like-count">123 likes</div>
