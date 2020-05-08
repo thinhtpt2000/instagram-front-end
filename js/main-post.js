@@ -72,7 +72,7 @@ const addLike = (element) => {
 }
 
 const likeHandler = (event) => {
-	let element = event.currentTarget.element;
+	let element = event.target;
 	let action = element.getAttribute('action-label');
 	if (action === 'like' && element.classList.contains('fas')) {
 		removeLike(element);
@@ -115,6 +115,18 @@ const closeModal = (event) => {
 	}
 }
 
+const changeSaveState = (event) => {
+	let icon = event.target;
+	if (icon.classList.contains('far')) {
+		icon.classList.add('fas');
+		icon.classList.remove('far');
+	}
+	else {
+		icon.classList.add('far');
+		icon.classList.remove('fas');
+	}
+}
+
 postList = document.getElementsByClassName('main-post-item');
 
 for (let post of postList) {
@@ -124,18 +136,17 @@ for (let post of postList) {
 	let btnNext = post.getElementsByClassName('btnNext')[0];
 
 	let imgList = post.getElementsByClassName('post-img');
-	let toolbar = post.getElementsByClassName('toolbar-center')[0];
+	let toolbarCenter = post.getElementsByClassName('toolbar-center')[0];
 
 	// process like animation
 	let likeBtn = post.getElementsByClassName('btnLike');
 	for (let btn of likeBtn) {
 		btn.addEventListener('click', likeHandler);
-		btn.element = btn;
 	}
 
 	for (let img of imgList) {
 		img.style.display = 'none';
-		toolbar.innerHTML = toolbar.innerHTML + tmpIcon;
+		toolbarCenter.innerHTML = toolbarCenter.innerHTML + tmpIcon;
 		img.addEventListener('dblclick', () => {
 			addLike(likeBtn[0]);
 			animateOverlay(img.parentElement);
@@ -146,7 +157,7 @@ for (let post of postList) {
 		id: postId,
 		curImg: 1,
 		imgList: imgList,
-		toolbarCenter: toolbar,
+		toolbarCenter: toolbarCenter,
 		countImg: imgList.length,
 		prev: btnPrev,
 		next: btnNext
@@ -164,6 +175,10 @@ for (let post of postList) {
 	let moreBtn = post.getElementsByClassName('post-more')[0];
 	moreBtn.addEventListener('click', openModalMore);
 	moreBtn.modal = modalMore;
+
+	// change onclick save icon
+	let saveIcon = post.getElementsByClassName('fa-bookmark')[0];
+	saveIcon.addEventListener('click', changeSaveState);
 }
 
 
