@@ -51,21 +51,78 @@ const autoExpandTextArea = (event) => {
 	}
 }
 
+const removeLike = (element) => {
+	element.setAttribute('action-label', 'unlike');
+	element.classList.add('far');
+	element.classList.remove('fas');
+	element.style.animation = 'scalingLikeBtn .5s forwards';
+	setTimeout(() => {
+		element.style.animation = 'none';
+	}, 500);
+}
+
+const addLike = (element) => {
+	element.setAttribute('action-label', 'like');
+	element.classList.add('fas');
+	element.classList.remove('far');
+	element.style.animation = 'scalingLikeBtn .5s forwards';
+	setTimeout(() => {
+		element.style.animation = 'none';
+	}, 500);
+}
+
+const likeHandler = (event) => {
+	let element = event.currentTarget.element;
+	let action = element.getAttribute('action-label');
+	if (action === 'like' && element.classList.contains('fas')) {
+		removeLike(element);
+	}
+	else if (element.classList.contains('far')) {
+		addLike(element);
+	}
+}
+
+const animateOverlay = (element) => {
+	let overlay = element.getElementsByClassName('post-overlay-icon')[0];
+	overlay.style.visibility = 'visible';
+	let icon = overlay.getElementsByTagName('i')[0];
+	icon.style.animation = 'scalingInOverlay .5s ease-in-out';
+	setTimeout(() => {
+		icon.style.animation = 'scalingOutOverlay 1s ease-in-out';
+	}, 450);
+	setTimeout(() => {
+		overlay.style.visibility = 'hidden';
+		icon.style.animation = 'none';
+	}, 1500);
+}
+
 postList = document.getElementsByClassName('main-post-item');
-// postList = Array.prototype.slice.call(postList);
+
 for (let post of postList) {
 	// process slide images
 	let postId = post.id;
 	let btnPrev = post.getElementsByClassName('btnPrev')[0];
 	let btnNext = post.getElementsByClassName('btnNext')[0];
-	// btnPrev.addEventListener('click', showImg(postId, -1));
-	// btnNext.addEventListener('click', showImg(postId, 1));
+
 	let imgList = post.getElementsByClassName('post-img');
 	let toolbar = post.getElementsByClassName('toolbar-center')[0];
-	for (let i = 0; i < imgList.length; i++) {
-		imgList[i].style.display = 'none';
-		toolbar.innerHTML = toolbar.innerHTML + tmpIcon;
+
+	// process like animation
+	let likeBtn = post.getElementsByClassName('btnLike');
+	for (let btn of likeBtn) {
+		btn.addEventListener('click', likeHandler);
+		btn.element = btn;
 	}
+
+	for (let img of imgList) {
+		img.style.display = 'none';
+		toolbar.innerHTML = toolbar.innerHTML + tmpIcon;
+		img.addEventListener('dblclick', () => {
+			addLike(likeBtn[0]);
+			animateOverlay(img.parentElement);
+		});
+	}
+
 	postHandler.push({
 		id: postId,
 		curImg: 1,
@@ -86,4 +143,3 @@ for (let post of postList) {
 postHandler.map((post) => {
 	showImg(post.id, 0);
 });
-
