@@ -1,0 +1,80 @@
+body {
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvet,san-serif;
+	width: 620px;
+	background-color: #EEE;
+}
+
+.story-container {
+	position: relative;
+	border-radius: 2px;
+	border: 1px solid #DDD;
+	padding: 0;
+}
+
+.story-item-list {
+	width: 100%;
+	background-color: #FFF;
+	display: flex;
+	position: relative;
+	z-index: 0;
+	overflow: hidden;
+}
+
+.story-item {
+	margin: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.story-profile-pic {
+	height: 60px;
+	width: 60px;
+	background-image: url('https://via.placeholder.com/128');
+	background-position: center;
+	background-size: cover;
+	border-radius: 50%;
+	position: relative;
+    text-align: center;
+}
+
+.story-profile-unread {
+	cursor: pointer;
+}
+
+.story-profile-unread:before {
+    content: '';
+    background-image: linear-gradient(45deg, rgba(252,228,0,1) 0%, rgba(255,0,224,1) 100%);
+    border-radius: 100%;
+    padding: 1.5px;
+    width: 60px;
+    height: 60px;
+    top: -1.5px;
+    left: -1.5px;
+    position:absolute;
+    z-index: -1;
+}
+
+.story-profile-name {
+	font-size: 0.8rem;
+	margin: 2px auto;
+}
+
+#story-prev,
+#story-next {
+	color: #EEE;
+	font-size: 1.5rem;
+	cursor: pointer;
+	position: absolute;
+	top: 30px;
+	/*z-index: 9999;*/
+}
+
+#story-prev {
+	left: 5px;
+}
+
+#story-next {
+	right: 5px;
+}
