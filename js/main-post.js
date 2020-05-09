@@ -8,8 +8,10 @@ const showImg = (postId, idx) => {
 	});
 	if (post !== undefined) {
 		let changeImg = post.curImg + idx;
-		post.imgList[post.curImg-1].style.display = 'none';
-		post.imgList[changeImg-1].style.display = 'block';
+		let newImg = post.imgList[changeImg-1];
+		let oldImg = post.imgList[post.curImg-1];
+		oldImg.style.display = 'none';
+		newImg.style.display = 'block';
 		if (changeImg === post.countImg) {
 			// hide next button
 			post.next.style.visibility = 'hidden';
@@ -159,7 +161,7 @@ for (let post of postList) {
 		prev: btnPrev,
 		next: btnNext
 	});
-	
+
 	// process comment
 	let textArea = post.getElementsByClassName('commentText')[0];
 	textArea.addEventListener('input', autoExpandTextArea);

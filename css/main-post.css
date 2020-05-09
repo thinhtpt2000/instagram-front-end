@@ -3,6 +3,7 @@ body {
 	font-size: 14px;
 	width: 620px;
 	background-color: #EEE;
+	z-index: 10;
 }
 
 .main-post-item {
@@ -129,10 +130,13 @@ body {
 
 .main-post-image {
 	position: relative;
+	overflow: hidden;
 }
 
 .main-post-image .post-img {
 	width: 100%;
+	animation: none;
+	position: relative;
 }
 
 .main-post-image .post-overlay-icon {
